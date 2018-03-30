@@ -24,12 +24,14 @@
         <a style="margin-bottom:50px;" href="/searchForm" class="btn btn-info">Back to Seacrh</a>
         <h1 style="text-align:center;color:slateblue;">TeleApp &mdash; Detailed Info </h1>
         <% if(searchOption == 'title' || searchOption == 'imdb') { %>
-            <div class="jumbotron">
+            
+	 <div class="jumbotron">
                 <h2 style="font-family:'Berkshire Swash', cursive; color:rgb(83, 210, 241);">
                     <%=data.Title%>
                 </h2>
                 <img src="<%=data.Poster%>" alt="poster not available">
-                <% for (var prop in data) { %>
+        	 <% delete data.Poster; delete data.Ratings ; %>
+	        <% for (var prop in data) { %>
 
                     <h3 class="heading">
                         <%=prop%>
