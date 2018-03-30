@@ -1,6 +1,5 @@
 <%include partials/header.ejs%>
     <style>
-       
         .heading {
             font-family: Lato;
             color: steelblue;
@@ -11,18 +10,18 @@
             font-size: 20px;
             word-wrap: break-word;
         }
-        img{
+
+        img {
             width: 70%;
-            margin: 40px auto 25px auto;    
+            margin: 40px auto 25px auto;
             height: 400px;
 
         }
-        
     </style>
 
 
     <div class="container-fluid">
-	a style="margin-bottom:50px;" href="/searchForm" class="btn btn-info">Back to Seacrh</a>
+        <a style="margin-bottom:50px;" href="/searchForm" class="btn btn-info">Back to Seacrh</a>
         <h1 style="text-align:center;color:slateblue;">TeleApp &mdash; Detailed Info </h1>
         <% if(searchOption == 'title' || searchOption == 'imdb') { %>
             <div class="jumbotron">
@@ -31,38 +30,47 @@
                 </h2>
                 <img src="<%=data.Poster%>" alt="poster not available">
                 <% for (var prop in data) { %>
-                    
+
                     <h3 class="heading">
                         <%=prop%>
                     </h3>
+
                     <%if (prop === 'Website'){%>
-                        <a  target="_blank" style="text-decoration:none;font-size:18px; color:rebeccapurple;" href="<%=data[prop]%>">
+                        <a target="_blank" style="text-decoration:none;font-size:18px; color:rebeccapurple;" href="<%=data[prop]%>">
                             <%=data[prop]%>
                         </a>
-                        <%}else{%>
+                    <%}else{%>
+                        <% if (prop === 'Ratings'){ %>
+                            <% data.Ratings.forEach((rating) => {%>
+                                <p>
+                                    <%= rating.Source %> &mdash;
+                                        <%= rating.Value %>
+                                </p>
+                        <%});} else {%>
+            
                             <p class="detail">
                                 <%=data[prop]%>
                             </p>
-                            <% }}; %>
+                    <% }}}; %>
             </div>
             <%} else {%>
                 <% data.Search.forEach(movie => {  %>
                     <div class="jumbotron">
-                            <h2 style="font-family:'Berkshire Swash', cursive; color:rgb(83, 210, 241);">
-                                    <%=movie.Title%>
-                                </h2>
-                    <img src="<%=movie.Poster%>" alt="poster not found">    
-                    <% for(prop in movie){ %>
-                        
-                        <h3 class="heading">
+                        <h2 style="font-family:'Berkshire Swash', cursive; color:rgb(83, 210, 241);">
+                            <%=movie.Title%>
+                        </h2>
+                        <img src="<%=movie.Poster%>" alt="poster not found">
+                        <% for(prop in movie){ %>
+
+                            <h3 class="heading">
                                 <%=prop%>
-                        </h3> 
-                        <p class="detail">
+                            </h3>
+                            <p class="detail">
                                 <%=movie[prop]%>
-                        </p> 
-                    <%}%>  
-                  </div>  
-                        <% })};%>
-                <a style="margin-bottom:50px;" href="/searchForm" class="btn btn-info">Back to Seacrh</a>
-                        
+                            </p>
+                            <%}%>
+                    </div>
+                    <% });}%>
+                        <a style="margin-bottom:50px;" href="/searchForm" class="btn btn-info">Back to Seacrh</a>
+
     </div>
