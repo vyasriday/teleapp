@@ -41,4 +41,4 @@ app.get("/searchQuery", (req,res) => {
 
 });
 
-app.listen(4000, () => console.log("Serving at Port 4000!!"));
+app.listen(process.env.PORT, () => console.log("Serving App at Heroku!!"));
