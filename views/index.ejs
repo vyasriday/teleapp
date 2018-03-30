@@ -1,0 +1,84 @@
+<% include partials/header %>
+<style>
+  body{
+    background-image:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url("theatre.jpeg"); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh;
+    font-family: Lato;
+    text-transform: capitalize;
+    line-height: 1.6;
+
+  }
+  
+  .center{
+    position: absolute; /* to center it vertically and horizontally */
+    top: 45%;
+    left:50%;
+    /* TRANSLATE HALF OF IT'S HEIGHT AND HALF OF IT'S WIDTH UP AND TO THE LEFT*/
+    transform: translate(-50%,-50%);
+    width:50%;
+}
+  #main-heading{
+    font-family: 'Berkshire Swash', cursive;
+   
+    font-size: 52px;
+    color:#c7ecee;
+    transition: all 0.5s;
+    margin-left: 25px;
+
+  }
+  #main-heading:hover{
+    transform: scale(1.1);
+    color: #c7ecee;;
+    font-family: Lato;
+  }
+  #title-text{
+    display: inline-block;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 24px;
+    color:#e67e22;
+    
+  }
+  .title{
+    width: 100%;
+    padding: 25px 25px;
+    box-shadow: steelblue 3px 5px 15px;
+  }
+
+a, a:hover{
+  text-decoration: none;
+}
+  a{
+    font-size: 20px;
+    text-align: center;
+    width: 125px;
+    height: 42px; 
+    border: 2px solid beige;
+    padding: 4px 10px;
+    display: inline-block;
+    margin-right: 10px;
+    color: #535c68;
+    background-color:beige;
+    border-radius: 10px;
+    transition: all 0.5s
+}
+
+
+</style>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12 center">
+      <div class="title">
+          <p id="main-heading">TELEAPP</p>
+            <p id="title-text">  
+               A place where you can search for <br/>movies and tv shows.
+            </p><br/>
+            <a href="/searchForm">Search</a>
+      </div>
+    </div>
+  </div>
+</div>
+<%include partials/footer %>

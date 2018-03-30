@@ -1,0 +1,49 @@
+<%include partials/header.ejs%>
+<style>
+    body{
+        background-image:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url("searchBackground.jpeg"); 
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+    }
+    
+    h1,h3,ul{
+        color: whitesmoke;
+    }
+</style>
+    <div class="container">
+        <div class="row">
+            <h1 style="text-align:center"> Search For Shows and Movies </h1>
+            <div style="width:40%; margin: 30px auto;">
+                <form action="/searchQuery" method="get">
+                    <div class="form-group">
+                        <input class="form-control" type="text" name="movieName" placeholder="name/id">
+                    </div>
+                    <label>
+                        <input type="radio" name="searchOption" value="title"> by Title
+                    </label>
+                    <label>
+                        <input type="radio" name="searchOption" value="imdb"> by imdbID
+                    </label>
+                    <div class="form-group">
+                        <button class="btn btn-lg btn-primary" style="margin:10px 0 0 5px"> Search</button>
+                    </div>
+                </form>
+                <a href="/"><button>Back</button></a>
+                
+                <div style="margin-top: 50px;">
+
+                    <h3> Search Instructions</h3>
+                    <ul style="font-size:16px">
+                        
+                        <li>by Title &mdash; Search for specific titles</li>
+                        <li>by imdbID &mdash; Search using imdbID </li>
+                        <li><strong>Leave Unchecked for general search by name</strong> </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <%include partials/footer.ejs%>
