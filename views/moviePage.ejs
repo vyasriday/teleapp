@@ -12,9 +12,9 @@
         }
 
         img {
-            width: 70%;
+            width: 50%;
             margin: 40px auto 25px auto;
-            height: 400px;
+            height: 300px;
 
         }
     </style>
@@ -61,7 +61,7 @@
                         <h2 style="font-family:'Berkshire Swash', cursive; color:rgb(83, 210, 241);">
                             <%=movie.Title%>
                         </h2>
-                        <img src="<%=movie.Poster%>" alt="poster not found">
+                        <img src="<%=movie.Poster%>" alt="poster not available">
                         <% for(prop in movie){ %>
 			   <% delete movie.Poster;%>
                             <h3 class="heading">
