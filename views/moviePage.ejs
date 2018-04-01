@@ -63,7 +63,7 @@
                         </h2>
                         <img src="<%=movie.Poster%>" alt="poster not found">
                         <% for(prop in movie){ %>
-
+			   <% delete movie.Poster;%>
                             <h3 class="heading">
                                 <%=prop%>
                             </h3>
