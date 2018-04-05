@@ -41,4 +41,4 @@ app.get("/searchQuery", (req,res) => {
 
 });
 
-app.listen(process.env.PORT|| 4000,() => console.log("Serving App at Heroku!!"));
+app.listen(process.env.PORT|| 4000,() => console.log("App Started"));
