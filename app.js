@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const request = require('request');
+const morgan = require('morgan');
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
+app.use(morgan); //Use morgan for logging
 
 app.get("/", (req, res) => res.render("index"));
 
